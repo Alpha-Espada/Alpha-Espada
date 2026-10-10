@@ -1,31 +1,111 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470">
-<style>text{font-family:'JetBrains Mono','Fira Code','SF Mono',Menlo,Consolas,'Courier New',monospace}.fade{opacity:0;animation:fade .6s ease forwards}@keyframes fade{to{opacity:1}}.blink{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}.pulse{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{50%{opacity:.2}}.sweep{animation:sweep 7s linear infinite}@keyframes sweep{from{transform:translateY(-140px)}to{transform:translateY(490px)}}.g1{opacity:0;animation:g1 4s infinite 2.2s}.g2{opacity:0;animation:g2 4s infinite 2.2s}@keyframes g1{0%,90%,100%{opacity:0;transform:translate(0,0)}91%{opacity:.8;transform:translate(-4px,1px)}94%{opacity:.8;transform:translate(3px,-1px)}97%{opacity:.5;transform:translate(-2px,0)}}@keyframes g2{0%,90%,100%{opacity:0;transform:translate(0,0)}91%{opacity:.8;transform:translate(4px,-1px)}94%{opacity:.8;transform:translate(-3px,1px)}97%{opacity:.5;transform:translate(2px,0)}}</style>
-<defs>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#00ff9f" stroke-opacity=".07"/></pattern>
-<pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity=".3"/></pattern>
-<linearGradient id="sweepg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00ff9f" stop-opacity="0"/><stop offset=".5" stop-color="#00ff9f" stop-opacity=".07"/><stop offset="1" stop-color="#00ff9f" stop-opacity="0"/></linearGradient>
-<radialGradient id="rg"><stop offset="0" stop-color="#00ff9f" stop-opacity=".13"/><stop offset="1" stop-color="#00ff9f" stop-opacity="0"/></radialGradient>
-<filter id="glow" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<linearGradient id="sg" x1="0" y1="95" x2="0" y2="420" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00e5ff"/><stop offset="1" stop-color="#00ff9f"/></linearGradient>
-</defs>
-<rect x="20" y="10" width="960" height="450" rx="12" fill="#0a0f15"/>
-<clipPath id="k6"><rect x="20" y="10" width="960" height="450" rx="12"/></clipPath>
-<g clip-path="url(#k6)">
-<rect x="20" y="10" width="960" height="450" fill="url(#grid)"/>
-<rect x="20" y="10" width="960" height="34" fill="#0f1620"/>
-<line x1="20" y1="44" x2="980" y2="44" stroke="#00ff9f" stroke-opacity=".2"/>
-<circle cx="42" cy="27" r="6" fill="#ff5f56"/><circle cx="62" cy="27" r="6" fill="#ffbd2e"/><circle cx="82" cy="27" r="6" fill="#27c93f"/>
-<text x="500.0" y="32" text-anchor="middle" font-size="13" fill="#5c7a70">alpha@espada: ~ — neofetch</text>
-<text x="964" y="32" text-anchor="end" font-size="11" fill="#5c7a70"></text>
+<foreignObject x="20" y="10" width="960" height="450">
+<div xmlns="http://www.w3.org/1999/xhtml" class="win">
+<style>
+/* ===== shared terminal theme (same in every assets/*.svg) ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.win {
+  position: relative; width: 960px; height: 450px; overflow: hidden;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+  color: #c9d1d9; background-color: #0a0f15;
+  background-image: linear-gradient(#00ff9f12 1px, transparent 1px), linear-gradient(90deg, #00ff9f12 1px, transparent 1px);
+  background-size: 32px 32px;
+  border: 1px solid #00ff9f66; border-radius: 12px;
+}
+.win::before { /* scanlines */
+  content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: repeating-linear-gradient(transparent 0 3px, #0000004d 3px 4px);
+}
+.win::after { /* moving scan beam */
+  content: ''; position: absolute; left: 0; right: 0; top: -140px; height: 140px; z-index: 2;
+  background: linear-gradient(transparent, #00ff9f12, transparent);
+  animation: sweep 7s linear infinite;
+}
+@keyframes sweep { to { transform: translateY(730px); } }
+.bar { display: flex; align-items: center; height: 34px; padding: 0 16px; font-size: 13px; color: #5c7a70; background: #0f1620; border-bottom: 1px solid #00ff9f33; }
+.dots { display: flex; gap: 8px; width: 120px; }
+.dots i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f56; }
+.dots i:nth-child(2) { background: #ffbd2e; }
+.dots i:nth-child(3) { background: #27c93f; }
+.bar .title { flex: 1; text-align: center; }
+.bar .tag { width: 120px; text-align: right; font-size: 11px; }
+.g { color: #00ff9f; } .c { color: #00e5ff; } .d { color: #5c7a70; }
+.glow { text-shadow: 0 0 6px #00ff9f, 0 0 16px #00ff9f80; }
+.fade { opacity: 0; animation: fade .6s ease forwards; }
+@keyframes fade { to { opacity: 1; } }
+/* typing: set --d (delay), --t (duration), --s (steps ≈ number of characters) */
+.type { display: inline-block; white-space: pre; clip-path: inset(0 100% 0 0); animation: type var(--t, 1.5s) steps(var(--s, 40)) var(--d, 0s) forwards; }
+@keyframes type { to { clip-path: inset(0 0 0 0); } }
+.pulse { animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .2; } }
+.blink { animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
 
-<ellipse cx="200" cy="270" rx="200" ry="200" fill="url(#rg)"/>
-<clipPath id="k5"><rect x="46" y="56" width="0" height="24.0"><animate attributeName="width" values="0.0;9.6;19.2;28.8;38.4;48.0;57.6;67.2;76.8;86.4;96.0;2000" calcMode="discrete" begin="0.2s" dur="0.5s" fill="freeze"/></rect></clipPath>
-<text x="46" y="72" font-size="16" font-weight="normal" fill="#c9d1d9" clip-path="url(#k5)" xml:space="preserve"><tspan fill="#00e5ff">$</tspan> neofetch</text>
-<g class="fade" style="animation-delay:0.7s"><g filter="url(#glow)"><text x="90" y="112" font-size="15" fill="url(#sg)" xml:space="preserve">              /\</text><text x="90" y="132" font-size="15" fill="url(#sg)" xml:space="preserve">             /  \</text><text x="90" y="152" font-size="15" fill="url(#sg)" xml:space="preserve">             |  |</text><text x="90" y="172" font-size="15" fill="url(#sg)" xml:space="preserve">             |  |</text><text x="90" y="192" font-size="15" fill="url(#sg)" xml:space="preserve">             |  |</text><text x="90" y="212" font-size="15" fill="url(#sg)" xml:space="preserve">             |  |</text><text x="90" y="232" font-size="15" fill="url(#sg)" xml:space="preserve">             |  |</text><text x="90" y="252" font-size="15" fill="url(#sg)" xml:space="preserve">             |  |</text><text x="90" y="272" font-size="15" fill="url(#sg)" xml:space="preserve">             |  |</text><text x="90" y="292" font-size="15" fill="url(#sg)" xml:space="preserve">             |  |</text><text x="90" y="312" font-size="15" fill="url(#sg)" xml:space="preserve">        .____|  |____.</text><text x="90" y="332" font-size="15" fill="url(#sg)" xml:space="preserve">        &#x27;----.  .----&#x27;</text><text x="90" y="352" font-size="15" fill="url(#sg)" xml:space="preserve">             |##|</text><text x="90" y="372" font-size="15" fill="url(#sg)" xml:space="preserve">             |##|</text><text x="90" y="392" font-size="15" fill="url(#sg)" xml:space="preserve">             |##|</text><text x="90" y="412" font-size="15" fill="url(#sg)" xml:space="preserve">             (__)</text></g></g>
-<g class="fade" style="animation-delay:0.8s"><text x="400" y="112" font-size="18" font-weight="700"><tspan fill="#00ff9f">alpha</tspan><tspan fill="#c9d1d9">@</tspan><tspan fill="#00e5ff">espada</tspan></text><text x="400" y="132" font-size="15" fill="#5c7a70">──────────────────────────────</text><g class="fade" style="animation-delay:0.9s"><text x="400" y="160" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">role</tspan><tspan x="510" fill="#c9d1d9">Full-Stack Developer</tspan></text></g><g class="fade" style="animation-delay:0.98s"><text x="400" y="184" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">company</tspan><tspan x="510" fill="#c9d1d9">Tireda Technology</tspan></text></g><g class="fade" style="animation-delay:1.06s"><text x="400" y="208" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">focus</tspan><tspan x="510" fill="#c9d1d9">Mobile · Web · Backend · Cloud</tspan></text></g><g class="fade" style="animation-delay:1.1400000000000001s"><text x="400" y="232" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">frontend</tspan><tspan x="510" fill="#c9d1d9">Angular · TypeScript · Tailwind · Ionic</tspan></text></g><g class="fade" style="animation-delay:1.22s"><text x="400" y="256" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">backend</tspan><tspan x="510" fill="#c9d1d9">Go · Node.js · Express · Prisma · MongoDB</tspan></text></g><g class="fade" style="animation-delay:1.3s"><text x="400" y="280" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">cloud</tspan><tspan x="510" fill="#c9d1d9">AWS · Docker · Firebase · CI/CD</tspan></text></g><g class="fade" style="animation-delay:1.38s"><text x="400" y="304" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">gamedev</tspan><tspan x="510" fill="#c9d1d9">Unity · C# — learning 3D</tspan></text></g><g class="fade" style="animation-delay:1.46s"><text x="400" y="328" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">seeking</tspan><tspan x="510" fill="#c9d1d9">collaborations, anything I can help with</tspan></text></g><g class="fade" style="animation-delay:1.54s"><text x="400" y="352" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">pronouns</tspan><tspan x="510" fill="#c9d1d9">He/Him</tspan></text></g><g class="fade" style="animation-delay:1.62s"><text x="400" y="376" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">likes</tspan><tspan x="510" fill="#c9d1d9">snakes · dogs</tspan></text></g><g class="fade" style="animation-delay:1.7000000000000002s"><text x="400" y="400" font-size="15" xml:space="preserve"><tspan fill="#00e5ff" font-weight="700">discord</tspan><tspan x="510" fill="#c9d1d9">alpha.espada</tspan></text></g><g class="fade" style="animation-delay:1.9s"><rect x="400" y="420" width="32" height="16" fill="#1f2a37"/><rect x="436" y="420" width="32" height="16" fill="#ff5f56"/><rect x="472" y="420" width="32" height="16" fill="#00ff9f"/><rect x="508" y="420" width="32" height="16" fill="#ffbd2e"/><rect x="544" y="420" width="32" height="16" fill="#00e5ff"/><rect x="580" y="420" width="32" height="16" fill="#ff2e88"/><rect x="616" y="420" width="32" height="16" fill="#a78bfa"/><rect x="652" y="420" width="32" height="16" fill="#c9d1d9"/></g></g>
+/* ===== neofetch-only styles ===== */
+.glowbg { position: absolute; left: 0; top: 60px; width: 400px; height: 400px; background: radial-gradient(closest-side, #00ff9f22, transparent); }
+.main { position: relative; padding: 20px 26px; }
+.cmd { font-size: 16px; height: 34px; }
+.cols { display: flex; gap: 40px; }
+.sword {
+  width: 320px; padding-left: 44px; font-size: 15px; line-height: 20px; font-family: inherit;
+  color: #00ff9f; filter: drop-shadow(0 0 5px #00ff9f99); animation-delay: .7s;
+}
+.info { animation-delay: .8s; }
+.user { font-size: 18px; font-weight: 700; }
+.rule { height: 1px; width: 250px; margin: 12px 0 14px; background: #5c7a70; }
+.rows { display: grid; grid-template-columns: 110px auto; row-gap: 5px; font-size: 15px; line-height: 19px; }
+.rows dt { color: #00e5ff; font-weight: 700; }
+.palette { display: flex; gap: 4px; margin-top: 18px; animation-delay: 1.9s; }
+.palette i { width: 32px; height: 16px; }
+</style>
 
-<rect class="sweep" x="20" y="10" width="960" height="140" fill="url(#sweepg)"/>
-<rect x="20" y="10" width="960" height="450" fill="url(#scan)"/>
-</g>
-<rect x="20.5" y="10.5" width="959" height="449" rx="12" fill="none" stroke="#00ff9f" stroke-opacity=".4"/>
+<div class="bar"><span class="dots"><i/><i/><i/></span><span class="title">alpha@espada: ~ — neofetch</span><span class="tag"/></div>
+<div class="glowbg"/>
+
+<div class="main">
+  <div class="cmd"><span class="type" style="--d:.2s; --t:.5s; --s:10"><span class="c">$</span> neofetch</span></div>
+  <div class="cols">
+<pre class="sword fade">      /\
+     /  \
+     |  |
+     |  |
+     |  |
+     |  |
+     |  |
+     |  |
+     |  |
+     |  |
+.____|  |____.
+'----.  .----'
+     |##|
+     |##|
+     |##|
+     (__)</pre>
+
+    <!-- ===== edit your info below: <dt> = label, <dd> = value ===== -->
+    <div class="info fade">
+      <div class="user"><span class="g">nabil</span>@<span class="c">ibrahim-oladosu</span></div>
+      <div class="rule"/>
+      <dl class="rows">
+        <dt>role</dt>     <dd>Full-Stack Developer</dd>
+        <dt>company</dt>  <dd>Tireda Technology</dd>
+        <dt>focus</dt>    <dd>Mobile · Web · Backend · Cloud</dd>
+        <dt>frontend</dt> <dd>Angular · TypeScript · Tailwind · Ionic</dd>
+        <dt>backend</dt>  <dd>Go · Node.js · Express · Prisma · PostgreSQL</dd>
+        <dt>cloud</dt>    <dd>AWS · Docker · Firebase · CI/CD</dd>
+        <dt>gamedev</dt>  <dd>Unity · C# — learning 3D</dd>
+        <dt>seeking</dt>  <dd>collaborations, anything I can help with</dd>
+        <dt>pronouns</dt> <dd>He/Him</dd>
+        <dt>likes</dt>    <dd>snakes · dogs</dd>
+        <dt>discord</dt>  <dd>alpha.espada</dd>
+      </dl>
+      <div class="palette fade">
+        <i style="background:#1f2a37"/><i style="background:#ff5f56"/><i style="background:#00ff9f"/><i style="background:#ffbd2e"/>
+        <i style="background:#00e5ff"/><i style="background:#ff2e88"/><i style="background:#a78bfa"/><i style="background:#c9d1d9"/>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</foreignObject>
 </svg>
