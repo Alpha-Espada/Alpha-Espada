@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="188" height="28" viewBox="0 0 188 28" role="img" aria-label="ROLE: FULL-STACK DEV">
+<title>ROLE: FULL-STACK DEV</title>
+<style>text { font-family: 'JetBrains Mono','Fira Code','SF Mono',Menlo,Consolas,'Courier New',monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; }</style>
+<!-- left half: black with white label -->
+<rect width="55" height="28" fill="#000000"/>
+
+<text x="27.5" y="18" text-anchor="middle" fill="#ffffff">ROLE</text>
+<!-- right half: neon with black value -->
+<rect x="55" width="133" height="28" fill="#00e5ff"/>
+<text x="121.5" y="18" text-anchor="middle" fill="#000000">FULL-STACK DEV</text>
+</svg>

@@ -2,9 +2,9 @@
 
 <img src="assets/header.svg" width="100%" alt="alpha@espada terminal: full-stack developer @ Tireda Technology"/>
 
-<img src="https://img.shields.io/badge/STATUS-ONLINE-00ff9f?style=for-the-badge&labelColor=000000" />
-<img src="https://img.shields.io/badge/ROLE-FULL--STACK_DEV-00e5ff?style=for-the-badge&labelColor=000000" />
-<img src="https://komarev.com/ghpvc/?username=Alpha-Espada&color=00ff9f&style=for-the-badge&label=PROFILE+VIEWS&base=0" />
+<img src="assets/badge-status.svg" alt="Status: online" />
+<img src="assets/badge-role.svg" alt="Role: full-stack dev" />
+<img src="https://komarev.com/ghpvc/?username=Alpha-Espada&color=007a4a&style=for-the-badge&label=PROFILE+VIEWS&base=0" />
 
 </div>
 
@@ -30,7 +30,7 @@
 <img src="assets/work.svg" width="100%" alt="Full-Stack Developer at Tireda Technology: mobile (Ionic, Angular, Capacitor, Firebase), web (Angular, TypeScript, Tailwind), backend (Go, Node.js, Express, Prisma, PostgreSQL), devops (AWS, Serverless, Docker, CI/CD)"/>
 
 <div align="center">
-  <a href="https://client.mamvest.com/login"><img src="https://img.shields.io/badge/%E2%96%B6_LIVE_CLIENT_WORK-MAMVest_Customer_Web_App-00e5ff?style=for-the-badge&labelColor=000000" /></a>
+  <a href="https://client.mamvest.com/login"><img src="assets/badge-live.svg" alt="Live client work: MAMVest Customer Web App" /></a>
 </div>
 
 ## `> ls ./games --unity`
@@ -55,7 +55,7 @@
 
 ## `> ping alpha.espada`
 
-<img src="https://img.shields.io/badge/DISCORD-alpha.espada-00ff9f?style=for-the-badge&logo=discord&logoColor=00ff9f&labelColor=000000" />
+<img src="assets/badge-discord.svg" alt="Discord: alpha.espada" />
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,50:00ff9f,100:000000&height=2&section=footer" width="100%"/>
 

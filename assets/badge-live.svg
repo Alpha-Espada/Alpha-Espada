@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="28" viewBox="0 0 375 28" role="img" aria-label="▶ LIVE CLIENT WORK: MAMVEST CUSTOMER WEB APP">
+<title>▶ LIVE CLIENT WORK: MAMVEST CUSTOMER WEB APP</title>
+<style>text { font-family: 'JetBrains Mono','Fira Code','SF Mono',Menlo,Consolas,'Courier New',monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; }</style>
+<!-- left half: black with white label -->
+<rect width="164" height="28" fill="#000000"/>
+
+<text x="82.0" y="18" text-anchor="middle" fill="#ffffff">▶ LIVE CLIENT WORK</text>
+<!-- right half: neon with black value -->
+<rect x="164" width="211" height="28" fill="#00e5ff"/>
+<text x="269.5" y="18" text-anchor="middle" fill="#000000">MAMVEST CUSTOMER WEB APP</text>
+</svg>

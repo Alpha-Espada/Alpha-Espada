@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="142" height="28" viewBox="0 0 142 28" role="img" aria-label="STATUS: ONLINE">
+<title>STATUS: ONLINE</title>
+<style>text { font-family: 'JetBrains Mono','Fira Code','SF Mono',Menlo,Consolas,'Courier New',monospace; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; }</style>
+<!-- left half: black with white label -->
+<rect width="71" height="28" fill="#000000"/>
+
+<text x="35.5" y="18" text-anchor="middle" fill="#ffffff">STATUS</text>
+<!-- right half: neon with black value -->
+<rect x="71" width="71" height="28" fill="#00ff9f"/>
+<text x="106.5" y="18" text-anchor="middle" fill="#000000">ONLINE</text>
+</svg>
