@@ -1,31 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="190" viewBox="0 0 480 190">
-<style>text{font-family:'JetBrains Mono','Fira Code','SF Mono',Menlo,Consolas,'Courier New',monospace}.fade{opacity:0;animation:fade .6s ease forwards}@keyframes fade{to{opacity:1}}.blink{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}.pulse{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{50%{opacity:.2}}.sweep{animation:sweep 7s linear infinite}@keyframes sweep{from{transform:translateY(-140px)}to{transform:translateY(210px)}}.g1{opacity:0;animation:g1 4s infinite 2.2s}.g2{opacity:0;animation:g2 4s infinite 2.2s}@keyframes g1{0%,90%,100%{opacity:0;transform:translate(0,0)}91%{opacity:.8;transform:translate(-4px,1px)}94%{opacity:.8;transform:translate(3px,-1px)}97%{opacity:.5;transform:translate(-2px,0)}}@keyframes g2{0%,90%,100%{opacity:0;transform:translate(0,0)}91%{opacity:.8;transform:translate(4px,-1px)}94%{opacity:.8;transform:translate(-3px,1px)}97%{opacity:.5;transform:translate(2px,0)}}</style>
-<defs>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#00ff9f" stroke-opacity=".07"/></pattern>
-<pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity=".3"/></pattern>
-<linearGradient id="sweepg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00ff9f" stop-opacity="0"/><stop offset=".5" stop-color="#00ff9f" stop-opacity=".07"/><stop offset="1" stop-color="#00ff9f" stop-opacity="0"/></linearGradient>
-<radialGradient id="rg"><stop offset="0" stop-color="#00ff9f" stop-opacity=".13"/><stop offset="1" stop-color="#00ff9f" stop-opacity="0"/></radialGradient>
-<filter id="glow" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<foreignObject x="6" y="6" width="468" height="178">
+<div xmlns="http://www.w3.org/1999/xhtml" class="win">
+<style>
+/* ===== shared terminal theme (same in every assets/*.svg) ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.win {
+  position: relative; width: 468px; height: 178px; overflow: hidden;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+  color: #c9d1d9; background-color: #0a0f15;
+  background-image: linear-gradient(#00ff9f12 1px, transparent 1px), linear-gradient(90deg, #00ff9f12 1px, transparent 1px);
+  background-size: 32px 32px;
+  border: 1px solid #00ff9f66; border-radius: 12px;
+}
+.win::before { /* scanlines */
+  content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: repeating-linear-gradient(transparent 0 3px, #0000004d 3px 4px);
+}
+.win::after { /* moving scan beam */
+  content: ''; position: absolute; left: 0; right: 0; top: -140px; height: 140px; z-index: 2;
+  background: linear-gradient(transparent, #00ff9f12, transparent);
+  animation: sweep 7s linear infinite;
+}
+@keyframes sweep { to { transform: translateY(460px); } }
+.bar { display: flex; align-items: center; height: 34px; padding: 0 16px; font-size: 13px; color: #5c7a70; background: #0f1620; border-bottom: 1px solid #00ff9f33; }
+.dots { display: flex; gap: 8px; width: 70px; }
+.dots i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f56; }
+.dots i:nth-child(2) { background: #ffbd2e; }
+.dots i:nth-child(3) { background: #27c93f; }
+.bar .title { flex: 1; text-align: center; }
+.bar .tag { width: 70px; text-align: right; font-size: 11px; }
+.g { color: #00ff9f; } .c { color: #00e5ff; } .d { color: #5c7a70; }
+.glow { text-shadow: 0 0 6px #00ff9f, 0 0 16px #00ff9f80; }
+.chip { display: inline-block; margin-right: 6px; padding: 3px 10px; font-size: 12px; color: #00ff9f; background: #00ff9f14; border: 1px solid #00ff9f73; border-radius: 5px; }
 
-</defs>
-<rect x="6" y="6" width="468" height="178" rx="12" fill="#0a0f15"/>
-<clipPath id="k10"><rect x="6" y="6" width="468" height="178" rx="12"/></clipPath>
-<g clip-path="url(#k10)">
-<rect x="6" y="6" width="468" height="178" fill="url(#grid)"/>
-<rect x="6" y="6" width="468" height="34" fill="#0f1620"/>
-<line x1="6" y1="40" x2="474" y2="40" stroke="#00ff9f" stroke-opacity=".2"/>
-<circle cx="28" cy="23" r="6" fill="#ff5f56"/><circle cx="48" cy="23" r="6" fill="#ffbd2e"/><circle cx="68" cy="23" r="6" fill="#27c93f"/>
-<text x="240.0" y="28" text-anchor="middle" font-size="13" fill="#5c7a70">quiz_game.exe</text>
-<text x="458" y="28" text-anchor="end" font-size="11" fill="#5c7a70">PID 03</text>
+/* ===== game-card-only styles ===== */
+.glowbg { position: absolute; left: -80px; top: 20px; width: 400px; height: 180px; background: radial-gradient(closest-side, #00ff9f22, transparent); }
+.main { position: relative; padding: 14px 20px; }
+.main h1 { font-size: 26px; font-weight: 800; letter-spacing: 1px; color: #00ff9f; }
+.main p { margin: 6px 0 10px; font-size: 15px; }
+.open { position: absolute; right: 20px; bottom: -22px; font-size: 13px; color: #00e5ff; }
+</style>
 
-<ellipse cx="120" cy="110" rx="200" ry="90" fill="url(#rg)"/>
-<text x="26" y="80" font-size="26" font-weight="800" fill="#00ff9f" filter="url(#glow)" letter-spacing="1">QUIZ GAME</text>
-<text x="26" y="110" font-size="15" xml:space="preserve"><tspan fill="#00e5ff">&gt;</tspan><tspan fill="#c9d1d9"> 2D quiz / UI</tspan></text>
-<rect x="26" y="128" width="56.0" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="54.0" y="144" text-anchor="middle" font-size="12" fill="#00ff9f">Unity</text><rect x="90.0" y="128" width="34.4" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="107.2" y="144" text-anchor="middle" font-size="12" fill="#00ff9f">C#</text><rect x="132.4" y="128" width="34.4" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="149.6" y="144" text-anchor="middle" font-size="12" fill="#00ff9f">2D</text>
-<text x="454" y="171" text-anchor="end" font-size="13" fill="#00e5ff">[ ▶ view source ]</text>
-
-<rect class="sweep" x="6" y="6" width="468" height="140" fill="url(#sweepg)"/>
-<rect x="6" y="6" width="468" height="178" fill="url(#scan)"/>
-</g>
-<rect x="6.5" y="6.5" width="467" height="177" rx="12" fill="none" stroke="#00ff9f" stroke-opacity=".4"/>
+<!-- ===== edit the text below ===== -->
+<div class="bar"><span class="dots"><i/><i/><i/></span><span class="title">quiz_game.exe</span><span class="tag">PID 03</span></div>
+<div class="glowbg"/>
+<div class="main">
+  <h1 class="glow">QUIZ GAME</h1>
+  <p><span class="c">&gt;</span> 2D quiz / UI</p>
+  <span class="chip">Unity</span><span class="chip">C#</span><span class="chip">2D</span>
+  <span class="open">[ ▶ view source ]</span>
+</div>
+</div>
+</foreignObject>
 </svg>

@@ -10,7 +10,7 @@
 
 ## `> neofetch`
 
-<img src="assets/neofetch.svg" width="100%" alt="Full-Stack Developer at Tireda Technology. Angular, TypeScript, Tailwind, Ionic, Go, Node.js, Express, Prisma, MongoDB, AWS, Docker, Firebase, Unity, C#. Open to collaborations. He/Him. Likes snakes and dogs. Discord: alpha.espada"/>
+<img src="assets/neofetch.svg" width="100%" alt="Full-Stack Developer at Tireda Technology. Angular, TypeScript, Tailwind, Ionic, Go, Node.js, Express, Prisma, PostgreSQL, AWS, Docker, Firebase, Unity, C#. Open to collaborations. He/Him. Likes snakes and dogs. Discord: alpha.espada"/>
 
 ## `> ls ./tech_stack`
 
@@ -19,7 +19,7 @@
 `// web & mobile`<br/>
 <img src="https://skillicons.dev/icons?i=angular,ts,tailwind,html,css&theme=dark" /><br/><br/>
 `// backend & cloud`<br/>
-<img src="https://skillicons.dev/icons?i=go,nodejs,express,prisma,mongodb,firebase,aws,docker&theme=dark" /><br/><br/>
+<img src="https://skillicons.dev/icons?i=go,nodejs,express,prisma,postgres,firebase,aws,docker&theme=dark" /><br/><br/>
 `// game dev & tools`<br/>
 <img src="https://skillicons.dev/icons?i=unity,cs,vscode,git,github&theme=dark" />
 
@@ -27,7 +27,7 @@
 
 ## `> ./work --company "Tireda Technology"`
 
-<img src="assets/work.svg" width="100%" alt="Full-Stack Developer at Tireda Technology: mobile (Ionic, Angular, Capacitor, Firebase), web (Angular, TypeScript, Tailwind), backend (Go, Node.js, Express, Prisma, MongoDB), devops (AWS, Serverless, Docker, CI/CD)"/>
+<img src="assets/work.svg" width="100%" alt="Full-Stack Developer at Tireda Technology: mobile (Ionic, Angular, Capacitor, Firebase), web (Angular, TypeScript, Tailwind), backend (Go, Node.js, Express, Prisma, PostgreSQL), devops (AWS, Serverless, Docker, CI/CD)"/>
 
 <div align="center">
   <a href="https://client.mamvest.com/login"><img src="https://img.shields.io/badge/%E2%96%B6_LIVE_CLIENT_WORK-MAMVest_Customer_Web_App-00e5ff?style=for-the-badge&labelColor=000000" /></a>
