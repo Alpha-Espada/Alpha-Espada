@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400">
+<style>text{font-family:'JetBrains Mono','Fira Code','SF Mono',Menlo,Consolas,'Courier New',monospace}.fade{opacity:0;animation:fade .6s ease forwards}@keyframes fade{to{opacity:1}}.blink{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}.pulse{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{50%{opacity:.2}}.sweep{animation:sweep 7s linear infinite}@keyframes sweep{from{transform:translateY(-140px)}to{transform:translateY(420px)}}.g1{opacity:0;animation:g1 4s infinite 2.2s}.g2{opacity:0;animation:g2 4s infinite 2.2s}@keyframes g1{0%,90%,100%{opacity:0;transform:translate(0,0)}91%{opacity:.8;transform:translate(-4px,1px)}94%{opacity:.8;transform:translate(3px,-1px)}97%{opacity:.5;transform:translate(-2px,0)}}@keyframes g2{0%,90%,100%{opacity:0;transform:translate(0,0)}91%{opacity:.8;transform:translate(4px,-1px)}94%{opacity:.8;transform:translate(-3px,1px)}97%{opacity:.5;transform:translate(2px,0)}}</style>
+<defs>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#00ff9f" stroke-opacity=".07"/></pattern>
+<pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity=".3"/></pattern>
+<linearGradient id="sweepg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00ff9f" stop-opacity="0"/><stop offset=".5" stop-color="#00ff9f" stop-opacity=".07"/><stop offset="1" stop-color="#00ff9f" stop-opacity="0"/></linearGradient>
+<radialGradient id="rg"><stop offset="0" stop-color="#00ff9f" stop-opacity=".13"/><stop offset="1" stop-color="#00ff9f" stop-opacity="0"/></radialGradient>
+<filter id="glow" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+
+</defs>
+<rect x="20" y="10" width="960" height="380" rx="12" fill="#0a0f15"/>
+<clipPath id="k7"><rect x="20" y="10" width="960" height="380" rx="12"/></clipPath>
+<g clip-path="url(#k7)">
+<rect x="20" y="10" width="960" height="380" fill="url(#grid)"/>
+<rect x="20" y="10" width="960" height="34" fill="#0f1620"/>
+<line x1="20" y1="44" x2="980" y2="44" stroke="#00ff9f" stroke-opacity=".2"/>
+<circle cx="42" cy="27" r="6" fill="#ff5f56"/><circle cx="62" cy="27" r="6" fill="#ffbd2e"/><circle cx="82" cy="27" r="6" fill="#27c93f"/>
+<text x="500.0" y="32" text-anchor="middle" font-size="13" fill="#5c7a70">tireda-technology :: ./work</text>
+<text x="964" y="32" text-anchor="end" font-size="11" fill="#5c7a70">tty2</text>
+
+<text x="50" y="74" font-size="19" font-weight="700" xml:space="preserve"><tspan fill="#00ff9f">▸ Full-Stack Developer</tspan><tspan fill="#c9d1d9" font-weight="400"> @ Tireda Technology</tspan></text>
+<circle class="pulse" cx="808" cy="68" r="5" fill="#00ff9f"/>
+<text x="950" y="73" text-anchor="end" font-size="13" fill="#5c7a70">4 modules running</text>
+<g class="fade" style="animation-delay:0.4s">
+<rect x="50" y="100" width="440" height="120" rx="8" fill="#0f1620" stroke="#00ff9f" stroke-opacity=".3"/>
+<rect x="50" y="112" width="3" height="96" fill="#00ff9f"/>
+<text x="70" y="132" font-size="15" font-weight="700" xml:space="preserve"><tspan fill="#5c7a70">[01]</tspan><tspan fill="#00e5ff"> MOBILE</tspan></text>
+<circle class="pulse" cx="404" cy="127" r="4" fill="#00ff9f" style="animation-delay:0.0s"/>
+<text x="414" y="131" font-size="11" fill="#00ff9f" letter-spacing="1">RUNNING</text>
+<text x="70" y="160" font-size="14" fill="#c9d1d9">Cross-platform iOS &amp; Android apps</text>
+<rect x="70" y="178" width="56.0" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="98.0" y="194" text-anchor="middle" font-size="12" fill="#00ff9f">Ionic</text><rect x="134.0" y="178" width="70.4" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="169.2" y="194" text-anchor="middle" font-size="12" fill="#00ff9f">Angular</text><rect x="212.4" y="178" width="84.8" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="254.8" y="194" text-anchor="middle" font-size="12" fill="#00ff9f">Capacitor</text><rect x="305.2" y="178" width="77.6" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="344.0" y="194" text-anchor="middle" font-size="12" fill="#00ff9f">Firebase</text></g><g class="fade" style="animation-delay:0.55s">
+<rect x="510" y="100" width="440" height="120" rx="8" fill="#0f1620" stroke="#00ff9f" stroke-opacity=".3"/>
+<rect x="510" y="112" width="3" height="96" fill="#00ff9f"/>
+<text x="530" y="132" font-size="15" font-weight="700" xml:space="preserve"><tspan fill="#5c7a70">[02]</tspan><tspan fill="#00e5ff"> WEB</tspan></text>
+<circle class="pulse" cx="864" cy="127" r="4" fill="#00ff9f" style="animation-delay:0.4s"/>
+<text x="874" y="131" font-size="11" fill="#00ff9f" letter-spacing="1">RUNNING</text>
+<text x="530" y="160" font-size="14" fill="#c9d1d9">Customer web apps &amp; admin dashboards</text>
+<rect x="530" y="178" width="70.4" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="565.2" y="194" text-anchor="middle" font-size="12" fill="#00ff9f">Angular</text><rect x="608.4" y="178" width="92.0" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="654.4" y="194" text-anchor="middle" font-size="12" fill="#00ff9f">TypeScript</text><rect x="708.4" y="178" width="77.6" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="747.2" y="194" text-anchor="middle" font-size="12" fill="#00ff9f">Tailwind</text></g><g class="fade" style="animation-delay:0.7s">
+<rect x="50" y="240" width="440" height="120" rx="8" fill="#0f1620" stroke="#00ff9f" stroke-opacity=".3"/>
+<rect x="50" y="252" width="3" height="96" fill="#00ff9f"/>
+<text x="70" y="272" font-size="15" font-weight="700" xml:space="preserve"><tspan fill="#5c7a70">[03]</tspan><tspan fill="#00e5ff"> BACKEND</tspan></text>
+<circle class="pulse" cx="404" cy="267" r="4" fill="#00ff9f" style="animation-delay:0.8s"/>
+<text x="414" y="271" font-size="11" fill="#00ff9f" letter-spacing="1">RUNNING</text>
+<text x="70" y="300" font-size="14" fill="#c9d1d9">REST APIs &amp; backend services</text>
+<rect x="70" y="318" width="34.4" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="87.2" y="334" text-anchor="middle" font-size="12" fill="#00ff9f">Go</text><rect x="112.4" y="318" width="70.4" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="147.6" y="334" text-anchor="middle" font-size="12" fill="#00ff9f">Node.js</text><rect x="190.8" y="318" width="70.4" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="226.0" y="334" text-anchor="middle" font-size="12" fill="#00ff9f">Express</text><rect x="269.20000000000005" y="318" width="63.2" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="300.8" y="334" text-anchor="middle" font-size="12" fill="#00ff9f">Prisma</text><rect x="340.40000000000003" y="318" width="70.4" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="375.6" y="334" text-anchor="middle" font-size="12" fill="#00ff9f">MongoDB</text></g><g class="fade" style="animation-delay:0.85s">
+<rect x="510" y="240" width="440" height="120" rx="8" fill="#0f1620" stroke="#00ff9f" stroke-opacity=".3"/>
+<rect x="510" y="252" width="3" height="96" fill="#00ff9f"/>
+<text x="530" y="272" font-size="15" font-weight="700" xml:space="preserve"><tspan fill="#5c7a70">[04]</tspan><tspan fill="#00e5ff"> DEVOPS</tspan></text>
+<circle class="pulse" cx="864" cy="267" r="4" fill="#00ff9f" style="animation-delay:1.2000000000000002s"/>
+<text x="874" y="271" font-size="11" fill="#00ff9f" letter-spacing="1">RUNNING</text>
+<text x="530" y="300" font-size="14" fill="#c9d1d9">Serverless deploys, containers, CI</text>
+<rect x="530" y="318" width="41.6" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="550.8" y="334" text-anchor="middle" font-size="12" fill="#00ff9f">AWS</text><rect x="579.6" y="318" width="92.0" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="625.6" y="334" text-anchor="middle" font-size="12" fill="#00ff9f">Serverless</text><rect x="679.6" y="318" width="63.2" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="711.2" y="334" text-anchor="middle" font-size="12" fill="#00ff9f">Docker</text><rect x="750.8" y="318" width="56.0" height="24" rx="5" fill="#00ff9f" fill-opacity=".08" stroke="#00ff9f" stroke-opacity=".45"/><text x="778.8" y="334" text-anchor="middle" font-size="12" fill="#00ff9f">CI/CD</text></g>
+
+<rect class="sweep" x="20" y="10" width="960" height="140" fill="url(#sweepg)"/>
+<rect x="20" y="10" width="960" height="380" fill="url(#scan)"/>
+</g>
+<rect x="20.5" y="10.5" width="959" height="379" rx="12" fill="none" stroke="#00ff9f" stroke-opacity=".4"/>
+</svg>
