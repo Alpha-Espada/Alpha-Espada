@@ -36,10 +36,10 @@
 ## `> ls ./games --unity`
 
 <div align="center">
-  <a href="https://github.com/Alpha-Espada/2D-Projects/tree/HEAD/Delivery%20Driver"><img src="assets/game-01.svg" width="48%" alt="Delivery Driver: 2D top-down driving, Unity C#"/></a>
-  <a href="https://github.com/Alpha-Espada/2D-Projects/tree/HEAD/Flappy%20BIrds"><img src="assets/game-02.svg" width="48%" alt="Flappy Birds: 2D endless arcade, Unity C#"/></a>
-  <a href="https://github.com/Alpha-Espada/2D-Projects/tree/HEAD/Quiz%20Game"><img src="assets/game-03.svg" width="48%" alt="Quiz Game: 2D quiz / UI, Unity C#"/></a>
-  <a href="https://github.com/Alpha-Espada/2D-Projects/tree/HEAD/Snow%20Boarder"><img src="assets/game-04.svg" width="48%" alt="Snow Boarder: 2D physics sports, Unity C#"/></a>
+  <a href="https://github.com/Alpha-Espada/Delivery-Driver"><img src="assets/game-01.svg" width="48%" alt="Delivery Driver: 2D top-down driving, Unity C#"/></a>
+  <a href="https://github.com/Alpha-Espada/Flappy-Birds"><img src="assets/game-02.svg" width="48%" alt="Flappy Birds: 2D endless arcade, Unity C#"/></a>
+  <a href="https://github.com/Alpha-Espada/Quiz-Game"><img src="assets/game-03.svg" width="48%" alt="Quiz Game: 2D quiz / UI, Unity C#"/></a>
+  <a href="https://github.com/Alpha-Espada/Snow-Boarder"><img src="assets/game-04.svg" width="48%" alt="Snow Boarder: 2D physics sports, Unity C#"/></a>
 </div>
 
 ## `> git log --stats`
